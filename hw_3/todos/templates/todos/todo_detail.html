@@ -1,0 +1,15 @@
+<!-- todos/templates/todos/todo_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo Detail</title>
+</head>
+<body>
+    <h1>{{ todo.title }}</h1>
+    <p>{{ todo.description }}</p>
+    <p>Due Date: {{ todo.due_date }}</p>
+    <p>Status: {{ todo.status }}</p>
+    <a href="{% url 'todo_list' %}">Back to list</a>
+</body>
+</html>

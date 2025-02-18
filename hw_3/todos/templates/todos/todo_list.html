@@ -1,0 +1,20 @@
+<!-- todos/templates/todos/todo_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <a href="{% url 'todo_create' %}">Create a new todo</a>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <a href="{% url 'todo_detail' todo.id %}">{{ todo.title }}</a>
+                <a href="{% url 'todo_delete' todo.id %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
