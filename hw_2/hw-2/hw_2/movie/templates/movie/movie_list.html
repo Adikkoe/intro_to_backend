@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список фильмов</title>
+</head>
+<body>
+    <h1>Список фильмов</h1>
+    <ul>
+        {% for movie in movies %}
+            <li><a href="{% url 'movie-detail' movie.id %}">{{ movie.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
