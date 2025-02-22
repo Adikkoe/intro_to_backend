@@ -1,0 +1,25 @@
+{% extends 'todos/base.html' %}
+{% block content %}
+<h1>{{ todo_list.title }}</h1>
+<p>{{ todo_list.description }}</p>
+<h2>Tasks</h2>
+<ul>
+    {% for todo in todos %}
+    <li>
+        {{ todo.title }} - {{ todo.status }} 
+        <a href="/todos/{{ todo.id }}/edit/">Edit</a>
+        <form method="post" action="/todos/{{ todo.id }}/delete/" style="display:inline;">
+            {% csrf_token %}
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>Create Todo</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary">Create</button>
+</form>
+{% endblock %}
