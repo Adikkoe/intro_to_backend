@@ -1,0 +1,16 @@
+<!-- tables_list.html -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Үстелдер тізімі</title>
+</head>
+<body>
+    <h1>Барлық үстелдер</h1>
+    <ul>
+        {% for table in tables %}
+            <li>Үстел нөмірі: {{ table.number }}, Орын саны: {{ table.seats }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

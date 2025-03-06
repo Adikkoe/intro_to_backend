@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Бронь статусын жаңарту</h2>
+<p>Ағымдағы статус: <strong>{{ reservation.status }}</strong></p>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Жаңа статус:</label>
+    <select name="status">
+        <option value="pending">Күтілуде</option>
+        <option value="confirmed">Расталды</option>
+        <option value="canceled">Бас тартылды</option>
+    </select>
+    <button type="submit">Жаңарту</button>
+</form>
+{% endblock %}
