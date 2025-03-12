@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Posts</h2>
+<a href="{% url 'add_post' %}" class="btn btn-success mb-3">Add Post</a>
+<ul class="list-group">
+    {% for post in posts %}
+        <li class="list-group-item">
+            <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

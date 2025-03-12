@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="p-5 rounded shadow-lg" style="background: #f4eee0; border-radius: 20px; max-width: 600px; margin: auto;">
+        <h2 class="text-success fw-bold text-center">Добавить пост</h2>
+        <p class="text-muted text-center">Поделитесь своими мыслями с миром</p>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <label class="form-label fw-bold">Заголовок:</label>
+                {{ form.title }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Изображение:</label>
+                {{ form.picture }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Описание:</label>
+                {{ form.description }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Тема:</label>
+                {{ form.thread }}
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-success px-4 py-2 fw-bold">Опубликовать</button>
+                <a href="{% url 'posts' %}" class="btn btn-outline-secondary px-4 py-2 fw-bold">Отмена</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
